@@ -1,11 +1,11 @@
 <template>
-  <header class="bg-background/75 border-b border-gray-200 dark:border-gray-800">
-    <UContainer class="flex h-14 items-center justify-between">
-      <NuxtLink to="/">Starter Nuxt</NuxtLink>
+  <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+    <nav class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 flex items-center justify-between px-4 mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+      <NuxtLink class="font-bold" to="/">OpenPreview</NuxtLink>
       <div class="flex">
         <ColorPicker />
         <ColorModeButton />
       </div>
-    </UContainer>
+    </nav>
   </header>
 </template>

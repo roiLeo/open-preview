@@ -1,7 +1,7 @@
 <template>
   <UPopover mode="hover">
     <template #default="{ open }">
-      <UButton color="gray" variant="ghost" square :class="[open && 'bg-gray-50 dark:bg-gray-800']" aria-label="Color picker">
+      <UButton :ui="{ rounded: 'rounded-full' }" color="gray" variant="ghost" square :class="[open && 'bg-gray-50 dark:bg-gray-800']" aria-label="Color picker">
         <UIcon name="i-heroicons-swatch-20-solid" class="text-primary-500 dark:text-primary-400 h-5 w-5" />
       </UButton>
     </template>

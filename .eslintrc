@@ -23,9 +23,6 @@
     "space-before-blocks": ["error", "always"],
     "space-infix-ops": ["error", { "int32Hint": false }],
 
-    // Typescript
-    "@typescript-eslint/type-annotation-spacing": "error",
-
     // Vuejs
     "vue/multi-word-component-names": 0,
     "vue/html-indent": ["error", 2],

@@ -1,30 +1,82 @@
 <template>
   <div>
-    <div class="my-24 grid max-w-7xl gap-16 sm:grid-cols-2 sm:gap-y-24 lg:items-center">
+    <form @submit.prevent="fetch">
+      <div class="flex gap-2">
+        <InputSearchbar v-model="query" />
+        <UButton icon="i-heroicons-paper-airplane" square type="submit" />
+      </div>
+    </form>
+
+    <div class="my-6">
+      <h1 class="mb-4 text-2xl font-semibold">Preview</h1>
+      <p class="text-xl text-gray-400">See how your website will look on social media platforms. <br>This live preview ensures your metadata aligns with your content and branding.</p>
+    </div>
+
+    <div v-if="metadata" class="p-2 w-full space-y-8">
       <div>
-        <h1 class="mb-5 max-w-sm text-5xl font-bold lg:text-6xl lg:tracking-tight">Kickstart your Nuxt&nbsp;app</h1>
-        <p class="max-w-sm text-xl text-gray-400">Use this project Starter Kit to build your collaborative app in minutes.</p>
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-          <UButton label="Get started" variant="solid" color="primary" to="https://app.netlify.com/start/deploy?repository=https://github.com/roiLeo/Nuxtplate" taget="_blank" />
-          <UButton label="Learn more" color="gray" to="https://github.com/roiLeo/Nuxtplate" taget="_blank" />
+        <h3 class="font-heading mb-2 font-medium">Facebook</h3>
+        <div class="w-full max-w-full cursor-pointer">
+          <div class="border-[1px] border-b-0 border-[#dadde1] bg-cover bg-center bg-no-repeat">
+            <div class="w-full relative h-0" style="padding-top: 52.5%;">
+              <img class="h-full w-full absolute top-0 object-cover block" :src="metadata.image">
+            </div>
+          </div>
+          <div class="break-words border-[1px] border-[#dadde1] bg-[#f2f3f5] px-[12px] py-[10px] antialiased">
+            <div class="overflow-hidden truncate whitespace-nowrap text-[12px] uppercase leading-[11px] text-[#606770]">
+              {{ metadata.url?.replace(/(^\w+:|^)\/\//, '') }}
+            </div>
+            <div class="block h-[46px] max-h-[46px] border-separate select-none overflow-hidden break-words text-left">
+              <div class="mt-[3px] truncate pt-[2px] text-[16px] font-semibold leading-[20px] text-[#1d2129]">
+                {{ metadata.title }}
+              </div>
+              <div class="mt-[3px] block h-[18px] max-h-[80px] border-separate select-none overflow-hidden truncate whitespace-nowrap break-words text-left text-[14px] leading-[20px] text-[#606770]">
+                {{ metadata.description }}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
       <div>
-        <!-- <img class="ml-auto aspect-video w-auto rounded-lg duration-300 ease-in-out sm:max-h-[300px] sm:hover:scale-125" src="https://images.unsplash.com/photo-1685173864989-37060e18b3d4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lyon" /> -->
-        <AnimatedFish />
+        <h3 class="font-heading mb-2 font-medium">X</h3>
+        <div class="-outline-offset-1 relative w-full max-w-full cursor-pointer overflow-hidden rounded-[0.85714em] border-[1px] border-[#e1e8ed] leading-[1.3em] text-black">
+          <div class="bg-cover bg-center bg-no-repeat">
+            <div class="w-full relative h-0" style="padding-top: 52.33%;">
+              <img class="h-full w-full absolute top-0 object-cover block" :src="metadata.image">
+            </div>
+          </div>
+          <div class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-40 px-[4px] py-[2px] rounded">
+            {{ metadata.url?.replace(/(^\w+:|^)\/\//, '') }}
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="my-24">
-      <h2 class="mb-4 text-2xl font-semibold">Features</h2>
-      <div class="mt-4 sm:mt-8">
-        <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 xl:grid-cols-4">
-          <SimpleCardLink to="/" label="Nuxt" subtitle="Best practices followed, using a mixture of SSR and custom API endpoints." />
-          <SimpleCardLink to="/" label="User Interface" subtitle="Adjust our reusable interface & design system to fit your needs." />
-          <SimpleCardLink to="/" label="Typescript" subtitle="All custom client and server functions are fully typed, and easy to update." />
-          <SimpleCardLink to="/" label="SWR" subtitle="See data update live using the SWR (state-while-revalidate) library." />
+      <div>
+        <h3 class="font-heading mb-2 font-medium">Discord</h3>
+        <div class="grid w-full max-w-full cursor-pointer items-start justify-self-start overflow-hidden rounded-[4px] border-l-[4px] border-[#202225] bg-[#2f3136]">
+          <div class="inline-grid grid-cols-[auto] grid-rows-[auto] overflow-hidden pt-2 pr-4 pb-4 pl-3">
+            <div class="mt-2 text-xs font-normal leading-4 text-white" style="grid-column: 1 / 1;"></div>
+            <div class="mt-2 inline-block break-words text-base font-semibold text-[#00b0f4]" style="grid-column: 1 / 1;">
+              {{ metadata.title }}
+            </div>
+            <div class="mt-2 whitespace-pre-line break-words border-0 p-0 text-sm font-normal text-[#dcddde]" style="grid-column: 1 / 1;">
+              {{ metadata.description }}
+            </div>
+            <div class="mt-4 overflow-hidden rounded">
+              <div class="relative block">
+                <img :src="metadata.image" :alt="metadata.title">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const query = defineModel({ type: String })
+const metadata = ref()
+
+const fetch = async () => {
+  metadata.value = await $fetch('/api/metadata', { query: { url: query.value } })
+}
+</script>

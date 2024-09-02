@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen flex-col">
+  <div class="px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto relative gap-6 flex flex-col min-h-screen">
     <DefaultNavbar />
 
     <UContainer class="w-full">
@@ -9,11 +9,3 @@
     <DefaultFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-useHead({
-  bodyAttrs: {
-    class: 'bg-white dark:bg-gray-900'
-  }
-})
-</script>
