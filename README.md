@@ -1,8 +1,14 @@
-# Nuxtplate 🍽
+# Open Preview
 
-> Look at the [nuxt documentation](https://nuxt.com/) to learn more.
+> SSR application powered by Nuxt ecosystem.
 
-This is the Nuxtjs boilerplate. It contains the following conventions/features:
+<details>
+  <summary>Screenshot</summary>
+  
+![Screenshot 2024-09-03 at 08-34-24 OpenPreview](https://github.com/user-attachments/assets/4c1dfa2a-d0de-42d8-98ac-0f813d6e665c)
+</details>
+
+This project contains the following stack:
 
 - [x] 🪲 [Typescript](https://www.typescriptlang.org/)
 - [x] 💚 [Nuxt](https://nuxt.com//)
@@ -15,7 +21,7 @@ This is the Nuxtjs boilerplate. It contains the following conventions/features:
 Make sure to install the dependencies:
 
 ```bash
-yarn
+pnpm
 ```
 
 ## Development Server
@@ -23,7 +29,7 @@ yarn
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Production
@@ -31,17 +37,15 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 Locally preview production build:
 
 ```bash
-yarn preview
+pnpm preview
 ```
 
 ## Deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FroiLeo%2FNuxtplate) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/roiLeo/Nuxtplate)
-
-Checkout the [deployment documentation](https://nuxt.com//guide/deploy/presets) for more information.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FroiLeo%2Fopen-preview) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/roiLeo/open-preview)
