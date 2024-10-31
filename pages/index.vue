@@ -53,11 +53,11 @@
         <h3 class="font-heading mb-2 font-medium">Discord</h3>
         <div class="grid w-full max-w-full cursor-pointer items-start justify-self-start overflow-hidden rounded-[4px] border-l-[4px] border-[#202225] bg-[#2f3136]">
           <div class="inline-grid grid-cols-[auto] grid-rows-[auto] overflow-hidden pt-2 pr-4 pb-4 pl-3">
-            <div class="mt-2 text-xs font-normal leading-4 text-white" style="grid-column: 1 / 1;"></div>
-            <div class="mt-2 inline-block break-words text-base font-semibold text-[#00b0f4]" style="grid-column: 1 / 1;">
+            <div class="mt-2 text-xs font-normal leading-4 text-white col-[1_/_1]"></div>
+            <div class="mt-2 inline-block break-words text-base font-semibold text-[#00b0f4] col-[1_/_1]">
               {{ metadata.title }}
             </div>
-            <div class="mt-2 whitespace-pre-line break-words border-0 p-0 text-sm font-normal text-[#dcddde]" style="grid-column: 1 / 1;">
+            <div class="mt-2 whitespace-pre-line break-words border-0 p-0 text-sm font-normal text-[#dcddde] col-[1_/_1]">
               {{ metadata.description }}
             </div>
             <div class="mt-4 overflow-hidden rounded">
@@ -73,7 +73,17 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Open-Preview | Preview Website Metadata',
+  ogTitle: 'Open-Preview | Preview Website Metadata',
+  description: 'Open-Preview is an advanced online tool designed to provide instant, comprehensive insights into any website\'s metadata and SEO characteristics',
+  ogDescription: 'Open-Preview is an advanced online tool designed to provide instant, comprehensive insights into any website\'s metadata and SEO characteristics',
+  ogImage: '/img/Open-Preview.png',
+  twitterCard: 'summary_large_image',
+})
+
 const query = defineModel({ type: String })
+
 const metadata = ref()
 
 const fetch = async () => {
