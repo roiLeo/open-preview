@@ -9,7 +9,7 @@
 
     <div class="my-6">
       <h1 class="mb-4 text-2xl font-semibold">Preview</h1>
-      <p class="text-xl text-gray-400">See how your website will look on social media platforms. <br>This live preview ensures your metadata aligns with your content and branding.</p>
+      <p class="text-xl text-neutral-400">See how your website will look on social media platforms. <br>This live preview ensures your metadata aligns with your content and branding.</p>
     </div>
 
     <div v-if="metadata" class="p-2 w-full space-y-8">
