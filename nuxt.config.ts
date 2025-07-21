@@ -9,12 +9,5 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n', '@nuxt/ui'],
 
-  css: ['~/assets/css/main.css'],
-
-  colorMode: {
-    preference: 'dark',
-    classSuffix: ''
-  },
-
-  compatibilityDate: '2024-09-02'
+  css: ['~/assets/css/main.css']
 })
