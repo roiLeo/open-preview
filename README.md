@@ -1,5 +1,7 @@
 # Open Preview
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/025b6d53-fdc4-4fdd-99d8-d57812f5a839/deploy-status)](https://app.netlify.com/projects/open-preview/deploys)
+
 > SSR application powered by Nuxt ecosystem.
 
 <details>
