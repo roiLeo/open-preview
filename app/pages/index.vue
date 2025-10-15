@@ -84,9 +84,23 @@ useSeoMeta({
 
 const query = defineModel({ type: String })
 
+const route = useRoute()
+const router = useRouter()
+
 const metadata = ref()
 
+onMounted(async () => {
+  const urlParam = route.query.url as string
+  if (urlParam) {
+    query.value = urlParam
+    await fetch()
+  }
+})
+
 const fetch = async () => {
+  if (!query.value) return
+
   metadata.value = await $fetch('/api/metadata', { query: { url: query.value } })
+  router.push({ query: { url: query.value }})
 }
 </script>
