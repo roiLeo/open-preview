@@ -9,5 +9,7 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n', '@nuxt/ui'],
 
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+
+  compatibilityDate: '2026-07-28'
 })
